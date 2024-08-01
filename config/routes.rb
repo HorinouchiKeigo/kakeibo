@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "sessions/new" => "sessions#new"
+  root to: redirect("/journal_entries")
   get "sessions/new" => "sessions#new"
 
   get '/auth/auth0/callback' => 'auth0#callback'
