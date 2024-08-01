@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "journal_entries#index"
+  root "sessions/new" => "sessions#new"
   get "sessions/new" => "sessions#new"
 
   get '/auth/auth0/callback' => 'auth0#callback'
