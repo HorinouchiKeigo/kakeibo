@@ -5,7 +5,7 @@ class Auth0Controller < ApplicationController
 
     user = User.find_or_create_from_auth_info(auth_info)
 
-    redirect_to "/"
+    redirect_to journal_entries_path
   end
 
   def failure
