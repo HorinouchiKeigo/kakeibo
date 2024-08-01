@@ -17,8 +17,11 @@
     <% end %>
 
     <nav class="bl_header_navigation">
-      <%= button_to "ログイン", "/auth/auth0", method: :post, data: { turbo: false } %>
-      <%= button_to "ログアウト", "auth/logout", method: :get, data: { turbo: false } %>
+      <% if session[:userinfo] %>
+        <%= button_to "ログアウト", "auth/logout", method: :get, data: { turbo: false } %>
+      <% else %>
+        <%= button_to "ログイン", "/auth/auth0", method: :post, data: { turbo: false } %>
+      <% end %>
     </nav>
     <!-- /.bl_header_navigation -->
   </div>
