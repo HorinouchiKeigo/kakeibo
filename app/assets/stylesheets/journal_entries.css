@@ -1,8 +1,17 @@
 .ly_journalEntry {
-  display: flex;
-  justify-content: center;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.bl_journalEntry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bl_form {
+  display: flex;
+  justify-content: center;
 }
 
 .bl_table {

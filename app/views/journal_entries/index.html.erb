@@ -1,5 +1,21 @@
 <div class="ly_journalEntry">
   <div class="bl_journalEntry">
+    <%= form_with model: @journal_entry do |form| %>
+      <div class="bl_form hp_journalEntry">
+        <%= form.label :credit_title, "貸方" %>
+        <%= form.text_field :credit_title %>
+
+        <%= form.label :debit_title, "借方" %>
+        <%= form.text_field :debit_title %>
+
+        <%= form.label :amount, "金額" %>
+        <%= form.number_field :amount %>
+
+        <%= form.submit "登録" %>
+      </div>
+      <!-- /.bl_form hp_journalEntry -->
+    <% end %>
+
     <% if @journal_entries.present? %>
       <%= render partial: "table", locals: { journal_entries: @journal_entries } %>
     <% end %>
