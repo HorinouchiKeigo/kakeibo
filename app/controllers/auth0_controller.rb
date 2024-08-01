@@ -9,8 +9,7 @@ class Auth0Controller < ApplicationController
   end
 
   def failure
-    # Handles failed authentication -- Show a failure page (you can also handle with a redirect)
-    @error_msg = request.params['message']
+    redirect_to root_url
   end
 
   def logout
