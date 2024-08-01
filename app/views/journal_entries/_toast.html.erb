@@ -1,0 +1,23 @@
+<% if flash[:alert] %>
+  <div class="bl_toast hp_alert">
+    <div class="bl_toast_message">
+      <%= alert %>
+    </div>
+    <!-- /.bl_toast_message -->
+    <div class="el_closeBtn">
+      ✕
+    </div>
+  </div>
+  <!-- /.bl_toast hp_alert -->
+<% elsif flash[:notice] %>
+  <div class="bl_toast hp_notice">
+    <div class="bl_toast_message">
+      <%= notice %>
+    </div>
+    <!-- /.bl_toast_message -->
+    <div class="el_closeBtn">
+      ✕
+    </div>
+  </div>
+  <!-- /.bl_toast hp_notice -->
+<% end %>
