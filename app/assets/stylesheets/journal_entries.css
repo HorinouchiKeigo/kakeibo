@@ -1,4 +1,16 @@
 .ly_journalEntry {
+  display: flex;
+  justify-content: center;
   max-width: 800px;
   margin: 0 auto;
+}
+
+.bl_table {
+  border-collapse: collapse;
+  border: 1px solid gray;
+
+  th {
+    padding: 0.5rem 2rem;
+    border: 1px solid gray;
+  }
 }
