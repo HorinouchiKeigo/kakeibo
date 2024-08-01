@@ -11,14 +11,13 @@ class JournalEntriesController < ApplicationController
     set_user
     @journal_entry = @user.journal_entries.new(journal_entry_params)
 
-    if @journal_entry.save
-      flash[:notice] = "仕訳を保存しました"
-      redirect_to journal_entries_path
-    else
-      @journal_entries = @user.journal_entries.order(created_at: :desc)
-      flash.now[:alert] = "仕訳の保存に失敗しました"
-      render :index, status: :unprocessable_entity
-    end
+
+  def destroy
+    set_user
+    @journal_entry = @user.journal_entries.find(params[:id])
+    @journal_entry.destroy
+    flash[:notice] = "仕訳を削除しました"
+    redirect_to journal_entries_path
   end
 
   private

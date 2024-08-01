@@ -18,11 +18,19 @@
   border-collapse: collapse;
   border: 1px solid gray;
 
+  tr {
+    text-align: center;
+  }
+
   th,
   td {
     padding: 0.5rem 2rem;
     border: 1px solid gray;
   }
+}
+
+.el_deleteBtn {
+  padding: 0 !important;
 }
 
 .bl_toast {

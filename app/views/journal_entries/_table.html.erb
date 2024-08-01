@@ -18,6 +18,7 @@
         <td><%= journal_entry.debit_title %></td>
         <td><%= journal_entry.amount %></td>
         <td><%= journal_entry.created_at.strftime("%Y/%m/%d") %></td>
+        <td class="el_deleteBtn"><%= button_to "削除する", journal_entry, method: :delete %></td>
       </tr>
     <% end %>
   </tbody>
