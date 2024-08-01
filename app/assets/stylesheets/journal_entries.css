@@ -18,7 +18,8 @@
   border-collapse: collapse;
   border: 1px solid gray;
 
-  th {
+  th,
+  td {
     padding: 0.5rem 2rem;
     border: 1px solid gray;
   }
