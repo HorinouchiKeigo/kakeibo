@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get '/auth/logout' => 'auth0#logout'
   # sessions/newからログアウトすると、なぜかauth/logoutではなくsessions/auth/logoutにリダイレクトされる
   get 'sessions/auth/logout', to: 'auth0#logout'
+
+  resources :journal_entries, only: [:index, :create, :destroy]
 end
