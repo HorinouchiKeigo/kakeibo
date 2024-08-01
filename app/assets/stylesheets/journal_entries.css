@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+}
+
+.ly_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #000;
+}
+
+.bl_header_right {
+  display: flex;
+  gap: 1rem;
+}
+
+.bl_userInfo {
+  display: flex;
+  gap: 1rem;
+}
+
+.bl_header_navigation {
+  display: flex;
+  gap: 1rem;
+}
