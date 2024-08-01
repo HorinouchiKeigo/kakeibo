@@ -1,23 +1,14 @@
-<% if flash[:alert] %>
-  <div class="bl_toast hp_alert">
+<% if flash.present? %>
+  <div class="<%= class_names("bl_toast", { hp_notice: flash[:notice], hp_alert: flash[:alert] }) %>"
+       data-controller="toast"
+       data-toast-target="toast">
     <div class="bl_toast_message">
-      <%= alert %>
+      <%= notice || alert %>
     </div>
     <!-- /.bl_toast_message -->
-    <div class="el_closeBtn">
+    <div class="el_closeBtn" data-action="click->toast#close">
       ✕
     </div>
   </div>
-  <!-- /.bl_toast hp_alert -->
-<% elsif flash[:notice] %>
-  <div class="bl_toast hp_notice">
-    <div class="bl_toast_message">
-      <%= notice %>
-    </div>
-    <!-- /.bl_toast_message -->
-    <div class="el_closeBtn">
-      ✕
-    </div>
-  </div>
-  <!-- /.bl_toast hp_notice -->
+  <!-- /.bl_toast -->
 <% end %>
