@@ -1,33 +1,8 @@
 <div class="ly_journalEntry">
   <div class="bl_journalEntry">
-    <table class="bl_table">
-      <thead class="bl_table_head">
-        <tr>
-          <th scope=col>ユーザー名</th>
-          <th scope=col>貸方</th>
-          <th scope=col>借方</th>
-          <th scope=col>金額</th>
-          <th scope=col>日付</th>
-        </tr>
-      </thead>
-      <!-- /.bl_table_head -->
-
-      <% if @journal_entries %>
-        <tbody class="bl_table_body">
-          <% @journal_entries.each do |journal_entry| %>
-            <tr>
-              <td><%= journal_entry.user.name %></td>
-              <td><%= journal_entry.credit_title %></td>
-              <td><%= journal_entry.debit_title %></td>
-              <td><%= journal_entry.amount %></td>
-              <td><%= journal_entry.created_at.strftime("%Y/%m/%d") %></td>
-            </tr>
-          <% end %>
-        </tbody>
-        <!-- /.bl_table_body -->
-      <% end %>
-    </table>
-    <!-- /.bl_table -->
+    <% if @journal_entries.present? %>
+      <%= render partial: "table", locals: { journal_entries: @journal_entries } %>
+    <% end %>
   </div>
   <!-- /.bl_journalEntry -->
 </div>
