@@ -27,11 +27,21 @@
 }
 
 .bl_table {
+  table-layout: fixed;
+  width: 100%;
   border-collapse: collapse;
   border: 1px solid gray;
 
   tr {
     text-align: center;
+  }
+
+  th:first-child {
+    width: 100px;
+  }
+
+  th:last-child {
+    width: 20px;
   }
 
   th,
