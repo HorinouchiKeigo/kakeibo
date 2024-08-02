@@ -1,0 +1,30 @@
+<header class="ly_header">
+  <div class="bl_header_left">
+    <div class="pageInfo">
+      <%= "#{controller_name}##{action_name}" %>
+    </div>
+    <!-- /.pageInfo -->
+  </div>
+  <!-- /.bl_header_left -->
+
+  <div class="bl_header_right">
+    <% if @user %>
+      <div class="bl_userInfo">
+        <span><%= @user.name %></span>
+        <span><%= @user.email %></span>
+      </div>
+      <!-- /.userInfo -->
+    <% end %>
+
+    <nav class="bl_header_navigation">
+      <% if session[:userinfo] %>
+        <%= button_to "ログアウト", "auth/logout", method: :get, data: { turbo: false } %>
+      <% else %>
+        <%= button_to "ログイン", "/auth/auth0", method: :post, data: { turbo: false } %>
+      <% end %>
+    </nav>
+    <!-- /.bl_header_navigation -->
+  </div>
+  <!-- /.bl_header_right -->
+</header>
+<!-- /.ly_header -->

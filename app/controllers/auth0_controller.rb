@@ -5,11 +5,11 @@ class Auth0Controller < ApplicationController
 
     user = User.find_or_create_from_auth_info(auth_info)
 
-    redirect_to "/"
+    redirect_to journal_entries_path
   end
 
   def failure
-    redirect_to root_url
+    redirect_to sessions_new_url
   end
 
   def logout
@@ -21,7 +21,7 @@ class Auth0Controller < ApplicationController
 
   def logout_url
     request_params = {
-      returnTo: root_url,
+      returnTo: sessions_new_url,
       client_id: AUTH0_CONFIG['auth0_client_id']
     }
 

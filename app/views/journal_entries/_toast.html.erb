@@ -1,0 +1,12 @@
+<div class="<%= class_names("bl_toast", { hp_notice: type == "notice", hp_alert: type == "alert" }) %>"
+     data-controller="toast"
+     data-toast-target="toast">
+  <div class="bl_toast_message">
+    <%= message %>
+  </div>
+  <!-- /.bl_toast_message -->
+  <div class="el_closeBtn" data-action="click->toast#close">
+    ✕
+  </div>
+</div>
+<!-- /.bl_toast -->

@@ -11,8 +11,8 @@
   </head>
 
   <body>
-    <%= button_to "ログイン", "/auth/auth0", method: :post, data: { turbo: false } %>
-    <%= button_to "ログアウト", "auth/logout", method: :get, data: { turbo: false } %>
+    <%= render "layouts/header" %>
+
     <%= yield %>
   </body>
 </html>

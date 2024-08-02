@@ -1,0 +1,100 @@
+.ly_journalEntry {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.bl_journalEntry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-wrap: break-word;
+}
+
+.bl_form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  .hp_invalid__border {
+    border: 1px solid red;
+  }
+
+  .hp_invalid__text {
+    color: red;
+  }
+
+  .bl_form_error {
+    display: flex;
+    height: 20px;
+    margin-left: 30px;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+  }
+}
+
+.bl_table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid gray;
+
+  tr {
+    text-align: center;
+  }
+
+  th:first-child {
+    width: 100px;
+  }
+
+  th:last-child {
+    width: 20px;
+  }
+
+  th,
+  td {
+    padding: 0.5rem 2rem;
+    border: 1px solid gray;
+  }
+}
+
+.el_deleteBtn {
+  padding: 0 !important;
+}
+
+.bl_toast {
+  position: fixed;
+  top: 90%;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 200, 0, 0.8);
+
+  &.hp_alert {
+    background-color: rgba(255, 0, 0, 0.8);
+  }
+
+  .el_closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    color: white;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  .bl_toast_message {
+    color: white;
+  }
+}

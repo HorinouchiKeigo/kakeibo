@@ -1,0 +1,35 @@
+<table class="bl_table" data-entry-form-target="table">
+  <thead class="bl_table_head">
+    <tr>
+      <th scope=col>ユーザー名</th>
+      <th scope=col>貸方</th>
+      <th scope=col>借方</th>
+      <th scope=col>金額(円)</th>
+      <th scope=col>日付</th>
+      <th scope=col></th>
+    </tr>
+  </thead>
+  <!-- /.bl_table_head -->
+
+  <tbody class="bl_table_body">
+    <% journal_entries.each do |journal_entry| %>
+      <tr>
+        <td><%= journal_entry.user.name %></td>
+        <td><%= journal_entry.credit_title %></td>
+        <td><%= journal_entry.debit_title %></td>
+        <td><%= journal_entry.amount %></td>
+        <td><%= journal_entry.created_at.strftime("%Y/%m/%d") %></td>
+        <td class="el_deleteBtn">
+          <%= form_with model: journal_entry, 
+              url: journal_entry_path(journal_entry), 
+              method: :delete, 
+              data: { action: "submit->entry-form#delete" } do |form| %>
+            <%= form.submit "削除する" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <!-- /.bl_table_body -->
+</table>
+<!-- /.bl_table -->

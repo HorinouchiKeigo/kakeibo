@@ -1,3 +1,45 @@
-<div>journal_entries#index</div>
-<div>ユーザー名: <%= @user.name %></div>
-<div>メールアドレス: <%= @user.email %></div>
+<div class="ly_journalEntry">
+  <div class="bl_journalEntry" data-controller="entry-form">
+    <%= form_with model: @journal_entry,
+                  data: { action: "submit->entry-form#post" } do |form| %>
+      <div class="bl_form hp_journalEntry">
+        <div class="bl_form_field">
+          <%= form.label :credit_title, "貸方" %>
+          <%= form.text_field :credit_title,
+              data: { entry_form_target: "creditTitle", action: "blur->entry-form#validate" } %>
+          <div class="bl_form_error hp_invalid__text"></div>
+          <!-- /.bl_form_error -->
+        </div>
+        <!-- /.bl_form_field -->
+
+        <div class="bl_form_field">
+          <%= form.label :debit_title, "借方" %>
+          <%= form.text_field :debit_title,
+              data: { entry_form_target: "debitTitle", action: "blur->entry-form#validate" } %>
+          <div class="bl_form_error hp_invalid__text"></div>
+          <!-- /.bl_form_error -->
+        </div>
+        <!-- /.bl_form_field -->
+
+        <div class="bl_form_field">
+          <%= form.label :amount, "金額" %>
+          <%= form.number_field :amount,
+              data: { entry_form_target: "amount", action: "blur->entry-form#validate" } %>
+          <div class="bl_form_error hp_invalid__text"></div>
+          <!-- /.bl_form_error -->
+        </div>
+        <!-- /.bl_form_field -->
+
+        <%= form.submit "登録",
+            data: { entry_form_target: "postBtn" } %>
+      </div>
+      <!-- /.bl_form hp_journalEntry -->
+    <% end %>
+
+    <% if @journal_entries.present? %>
+      <%= render partial: "table", locals: { journal_entries: @journal_entries } %>
+    <% end %>
+  </div>
+  <!-- /.bl_journalEntry -->
+</div>
+<!-- /.ly_journalEntry -->
