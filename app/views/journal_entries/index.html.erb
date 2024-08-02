@@ -1,17 +1,37 @@
 <div class="ly_journalEntry">
   <div class="bl_journalEntry">
-    <%= form_with model: @journal_entry do |form| %>
+    <%= form_with model: @journal_entry,
+                  data: { controller: "entry-form", action: "submit->entry-form#submit" } do |form| %>
       <div class="bl_form hp_journalEntry">
-        <%= form.label :credit_title, "貸方" %>
-        <%= form.text_field :credit_title %>
+        <div class="bl_form_field">
+          <%= form.label :credit_title, "貸方" %>
+          <%= form.text_field :credit_title,
+              data: { entry_form_target: "creditTitle", action: "blur->entry-form#validate" } %>
+          <div class="bl_form_error hp_invalid__text"></div>
+          <!-- /.bl_form_error -->
+        </div>
+        <!-- /.bl_form_field -->
 
-        <%= form.label :debit_title, "借方" %>
-        <%= form.text_field :debit_title %>
+        <div class="bl_form_field">
+          <%= form.label :debit_title, "借方" %>
+          <%= form.text_field :debit_title,
+              data: { entry_form_target: "debitTitle", action: "blur->entry-form#validate" } %>
+          <div class="bl_form_error hp_invalid__text"></div>
+          <!-- /.bl_form_error -->
+        </div>
+        <!-- /.bl_form_field -->
 
-        <%= form.label :amount, "金額" %>
-        <%= form.number_field :amount %>
+        <div class="bl_form_field">
+          <%= form.label :amount, "金額" %>
+          <%= form.number_field :amount,
+              data: { entry_form_target: "amount", action: "blur->entry-form#validate" } %>
+          <div class="bl_form_error hp_invalid__text"></div>
+          <!-- /.bl_form_error -->
+        </div>
+        <!-- /.bl_form_field -->
 
-        <%= form.submit "登録" %>
+        <%= form.submit "登録",
+            data: { entry_form_target: "submitBtn" } %>
       </div>
       <!-- /.bl_form hp_journalEntry -->
     <% end %>

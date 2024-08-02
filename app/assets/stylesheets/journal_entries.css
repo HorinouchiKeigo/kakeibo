@@ -12,6 +12,18 @@
 .bl_form {
   display: flex;
   justify-content: center;
+
+  .hp_invalid__border {
+    border: 1px solid red;
+  }
+
+  .hp_invalid__text {
+    color: red;
+  }
+
+  .bl_form_error {
+    font-size: 0.7rem;
+  }
 }
 
 .bl_table {
