@@ -89,7 +89,7 @@ export default class extends Controller {
       if (!response.ok) {
         const responseJson = await response.json();
         this.#updateTable(responseJson.table);
-        this.#showToast(responseJson.table);
+        this.#showToast(responseJson.toast);
       }
 
       const responseJson = await response.json();
