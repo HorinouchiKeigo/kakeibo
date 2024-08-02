@@ -39,7 +39,6 @@ export default class extends Controller {
 
   delete = async (event) => {
     event.preventDefault();
-    console.log(event.target.action);
 
     const url = event.target.action;
     const method = "DELETE";
@@ -78,7 +77,6 @@ export default class extends Controller {
 
   #postFormData = async (url, method, formData) => {
     try {
-      console.log(formData);
       const response = await fetch(url, {
         method: method,
         headers: {
