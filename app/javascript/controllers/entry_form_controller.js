@@ -127,12 +127,12 @@ export default class extends Controller {
 
     // 最大文字数
     const maxLength = isInteger ? 9 : 20;
-    const length = new Blob([value]).size;
+    const length = [...value].length;
 
     if (length > maxLength) {
       const message = isInteger
         ? `${labelText}は${maxLength}桁以内で入力してください`
-        : `${labelText}は全角${maxLength / 2}文字以内で入力してください`;
+        : `${labelText}は${maxLength}文字以内で入力してください`;
 
       return { valid: false, message: message };
     }
