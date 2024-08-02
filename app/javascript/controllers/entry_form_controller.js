@@ -127,7 +127,7 @@ export default class extends Controller {
 
     // 最大文字数
     const maxLength = isInteger ? 9 : 20;
-    const length = [...value].length;
+    const length = value.length;
 
     if (length > maxLength) {
       const message = isInteger
