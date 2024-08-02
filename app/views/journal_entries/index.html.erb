@@ -1,7 +1,7 @@
 <div class="ly_journalEntry">
-  <div class="bl_journalEntry">
+  <div class="bl_journalEntry" data-controller="entry-form">
     <%= form_with model: @journal_entry,
-                  data: { controller: "entry-form", action: "submit->entry-form#submit" } do |form| %>
+                  data: { action: "submit->entry-form#post" } do |form| %>
       <div class="bl_form hp_journalEntry">
         <div class="bl_form_field">
           <%= form.label :credit_title, "貸方" %>
@@ -31,7 +31,7 @@
         <!-- /.bl_form_field -->
 
         <%= form.submit "登録",
-            data: { entry_form_target: "submitBtn" } %>
+            data: { entry_form_target: "postBtn" } %>
       </div>
       <!-- /.bl_form hp_journalEntry -->
     <% end %>
